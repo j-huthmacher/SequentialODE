@@ -24,7 +24,6 @@ class SequentialODE(nn.Module):
         """ Initilization of the SequentialODE
 
             Parameters:
-            -----------
                 seq_input_dim: int
                     Input dimension for the SequenceProcessor
                     (RNN, corresponds to num features)
@@ -63,13 +62,11 @@ class SequentialODE(nn.Module):
     def forward(self, x_input, time: [float] = None):
         """
             Parameters:
-            -----------
                 x: torch.Tensor
                     Input date for the forward pass.
                 time: [float]
                     Array with timestamps.
             Return:
-            -------
                 torch.Tensor: Output of the forward pass.
         """
         # initial value for the ODE
@@ -91,7 +88,6 @@ class SequenceProcessor(nn.Module):
         """ Initilization of the SequentialProcesser (simple RNN)
 
             Parameters:
-            -----------
                 input_dim: int
                     Dimension of the data (num features)
                 hidden_state_dim: int
@@ -112,12 +108,10 @@ class SequenceProcessor(nn.Module):
         """ Forward method
 
             Parameters:
-            -----------
                 x_seq: torch.Tensor
                     Tensor that contains the seuquences which
                     should be processed.
             Return:
-            -------
                 torch.Tensor: Output of the model forward.
         """
         # pylint: disable=no-member, invalid-name

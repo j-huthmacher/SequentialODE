@@ -51,7 +51,6 @@ class NeuralODE(nn.Module):
         """ Forward pass of the NeuralODE.
 
             Parameters:
-            -----------
                 x: torch.Tensor
                     Input data.
                 ts: [float]
@@ -79,7 +78,6 @@ class ODEFunc(nn.Module):
         """ Initilization of the ODE-function net.
 
             Parameter:
-            ----------
                 dim: [int]
                     Array of dimensions for each layer.
         """
@@ -109,7 +107,6 @@ class ODEFunc(nn.Module):
         """ Forward pass of the neural net.
 
             Parameters:
-            -----------
                 t: torch.Tensor
                     Tensor of dimension (1,d) that contains the
                     evaluation points.
@@ -119,7 +116,6 @@ class ODEFunc(nn.Module):
                     Input data which we want to process
 
             Return:
-            -------
                 torch.Tensor: Output of the neural network for the input x.
         """
         # self.nfe += 1
@@ -140,7 +136,6 @@ class ODELayer(nn.Module):
         """ Initialization of the ODE layer
 
             Parameters:
-            -----------
                 ode_func: nn.Module
                     Neural net that is used ot approximate the derivative
                     that we want to find.
@@ -166,7 +161,6 @@ class ODELayer(nn.Module):
         """ Forward pass through the ODE layer
 
             Parameters:
-            ----------
                 x: torch.Tensor
                     Represents the input data.
                 ts: [float]
@@ -174,7 +168,6 @@ class ODELayer(nn.Module):
                     It has to be a strictly increasing array with time steps.
 
             Return:
-            -------
                 torch.Tensor: Output of the ODE layer for the input x.
         """
 
